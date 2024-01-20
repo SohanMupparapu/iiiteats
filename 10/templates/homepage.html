@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Delivery Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- <link rel="stylesheet" href="homepage.css"> -->
+
+  <style>
+    /* General Styles */
+
+    
+
+    body {
+      text-shadow: 0 0 5px #fff, 0 0 1px #fff, 0 0 1px #0073e6, 0 0 2px #0073e6, 0 0 2px #0073e6, 0 0 3px #0073e6, 0 0 35px #0073e6;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-top: 60px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      color: #777;
+    }
+
+    button {
+      border-radius: 20px;
+      padding: 10px 20px;
+      background-color: rgb(255, 255, 255)
+    }
+
+
+
+
+    /* Header Styles */
+
+    header {
+      background-image: url('https://i.imgur.com/h1v0snX.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      /* padding: 20px; */
+      /* position: absolute; */
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    nav a {
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    nav a:hover {
+      color: aqua;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      font-size: 40px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 72px;
+      text-align: center;
+    }
+
+    header p {
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Menu Section Styles */
+
+    #menu {
+      display: flex;
+      /* background-color: rgb(113, 218, 236); */
+
+      margin-right: 280px;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .menu-item {
+      /* display: flex; */
+      /* display: inline-flex; */
+      margin-right: 28px;
+      /* margin-bottom: 80px; */
+    }
+
+    .menu-item img {
+      /* width: 108%; */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .menu-item h3 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .menu-item p {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 24px;
+      /* color: #777; */
+    }
+
+    .menu-grid {
+      display: flex;
+      display: inline-flex;
+    }
+
+    /* Featured Section Styles */
+
+    #featured {
+      background-image: url('https://i.imgur.com/qXeO3iH.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .featured-item {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      text-align: center;
+      width: 60%;
+    }
+
+    .featured-item h3 {
+      color: #fff;
+      font-size: 36px;
+    }
+
+    .featured-item p {
+      color: #fff;
+      font-size: 20px;
+      line-height: 32px;
+      margin-top: 20px;
+    }
+
+    /* About Section Styles */
+
+    #about {
+      background-color: #f9f9f9;
+      padding: 80px 0;
+    }
+
+    .about-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+    }
+
+    .about-item {
+      width: 30%;
+      text-align: center;
+    }
+
+    .about-item i {
+      font-size: 48px;
+      color: #ff6f3d;
+      margin-bottom: 20px;
+    }
+
+    .about-item h3 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .about-item p {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #777;
+    }
+
+    /* Contact Section Styles */
+
+    #contact {
+      /* background-color: #341785; */
+      padding: 80px 0;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+    }
+
+    .contact-item {
+      width: 30%;
+      text-align: center;
+    }
+    img{
+      box-shadow: 10px 10px 10px rgb(42, 2, 2);
+    }
+    .contact-item i {
+      font-size: 48px;
+      color: #ff6f3d;
+      margin-bottom: 20px;
+    }
+
+    .contact-item h3 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .contact-item p {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #ffffff;
+    }
+
+    .contact-form {
+      width: 40%;
+      margin: auto;
+      margin-top: 80px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 2px solid #ff6f3d;
+      font-size: 16px;
+    }
+
+    .contact-form textarea {
+      height: 200px;
+    }
+
+    .contact-form button {
+      display: block;
+      /* margin: auto; */
+      background-color: #ff6f3d;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #fff;
+      color: #ff6f3d;
+      border: 2px solid #ff6f3d;
+    }
+
+    /* Footer Styles */
+
+    footer {
+      display: inline;
+      display: flex;
+
+      background-color: #000000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media only screen and (max-width: 768px) {
+      header {
+        height: 400px;
+      }
+
+      header h1 {
+        font-size: 48px;
+      }
+
+      header p {
+        font-size: 18px;
+      }
+
+      .menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .menu-item img {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .menu-item h3 {
+        font-size: 20px;
+      }
+
+      .menu-item p {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      #featured {
+        height: 400px;
+      }
+
+      .featured-item {
+        width: 80%;
+      }
+
+      .featured-item h3 {
+        font-size: 24px;
+      }
+      img{
+        box-shadow:#777;
+      }
+      .featured-item p {
+        font-size: 18px;
+      }
+
+      .about-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-item {
+        width: 80%;
+        margin-bottom: 40px;
+      }
+
+      .contact-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-item {
+        width: 80%;
+        margin-bottom: 40px;
+      }
+
+      .contact-form {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body style="background-image: url('/static/bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; color: white;">
+  <!-- Header Section -->
+  <header style="background-image: url('/static/template.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; color: white;">
+    <nav style="font-size: 40px;">
+      <!-- <a href="#" class="logo" style="font-size: 40px;">IIIT EATS</a>  -->
+      <img src="/static/log.png" style="width: 7%; height: 80%;">
+      <ul>
+        <li><a href="http://127.0.0.1:5000/home" style="font-size: 40px;">Home</a></li>
+        <li><a href="http://127.0.0.1:5000/about" style="font-size: 40px;">About</a></li>
+        <li><a href="http://127.0.0.1:5000/order" style="font-size: 40px;">Your Orders <i class="fas fa-shopping-cart"></i></a></li>
+        <!-- <li><a href="#" style="font-size: 40px;"><i class="fas fa-shopping-cart"></i> Cart</a></li> --> 
+      </ul>
+    </nav>
+    <script>
+      function selectext() {
+
+        const input = document.getElementById("category")
+        input.value = input.options[input.selectedIndex].text;
+      }
+      checkboxes=document.querySelectorAll('input[type="checkbox"][name="food"]:checked')
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', selectext());
+        
+      });
+
+    </script>
+    <div class="hero">
+      <h1 style="color: rgb(237, 233, 243);">Order your favorite food</h1>
+      
+    </div>
+  </header>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 70px; color: rgb(251, 253, 255);">Our Speciality</h2>
+      <pre>
+
+
+
+
+        </pre>
+      <div class="menu-grid" style="text-align: center;">
+        <div class="menu-item" style="text-align: center;">
+          <img src="/static/pizza.jpg" alt="pizza" width="350px" >
+          <h3>Pizza</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+          
+          <input type="checkbox" name="food" value="pizza">Order Now</input>
+          <br>
+          <button type="button" class="decrement-button" data-food="pizza">-</button>
+          <input type="number" id="pizza" name="pizza" value="0" min="0">
+          <button type="button" class="increment-button" data-food="pizza">+</button>
+        </div>
+        <div class="menu-item">
+          <img src="/static/burger.jpeg" alt="burger" width="350px">
+          <h3>Burger</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+          <input type="checkbox" name="food" value="burger">Order Now</input><br>
+          <button type="button" class="decrement-button" data-food="burger">-</button>
+          <input type="number" id="burger" name="burger" value="0" min="0">
+          <button type="button" class="increment-button" data-food="burger">+</button>
+        </div>
+        <div class="menu-item">
+          <img src="/static/tacos.jpeg" alt="Tacos" width="350px">
+          <h3>Tacos</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+          <input type="checkbox" name="food" value="Tacos">Order Now</input><br>
+          <button type="button" class="decrement-button" data-food="Tacos">-</button>
+          <input type="number" id="Tacos" name="Tacos" value="0" min="0">
+          <button type="button" class="increment-button" data-food="Tacos">+</button>
+        </div>
+        <div class="menu-item">
+          <img src="/static/sushi.jpg" alt="sushi" width="350px">
+          <h3>Sushi</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+          <input type="checkbox" name="food" value="sushi">Order Now</input><br>
+          <button type="button" class="decrement-button" data-food="sushi">-</button>
+          <input type="number" id="sushi" name="sushi" value="0" min="0">
+          <button type="button" class="increment-button" data-food="sushi">+</button>
+        </div>
+
+      </div>
+
+      <div class="container">
+        <h2 style="text-align: center; font-size: 70px; color: rgb(245, 247, 250);">Chinese Chaska</h2>
+        <pre>
+
+
+
+
+      </pre>
+        <div class="menu-grid" style="text-align: center;">
+          <div class="menu-item" style="text-align: center;">
+            <img src="/static/noodles.jpg" alt="Noodles" width="350px">
+            <h3>Noodles</h3>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+            <input type="checkbox" name="food" value="Noodles">Order Now</input><br>
+            <button type="button" class="decrement-button" data-food="Noodles">-</button>
+            <input type="number" id="Noodles" name="Noodles" value="0" min="0">
+            <button type="button" class="increment-button" data-food="Noodles">+</button>
+          </div>
+          <div class="menu-item">
+            <img src="/static/Manchurian.jpeg" alt="Manchurian" width="350px" height="250px">
+            <h3>Manchurian</h3>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+            <input type="checkbox" name="food" value="Manchurian">Order Now</input><br>
+            <button type="button" class="decrement-button" data-food="Manchurian">-</button>
+            <input type="number" id="Manchurian" name="Manchurian" value="0" min="0">
+            <button type="button" class="increment-button" data-food="Manchurian">+</button>
+          </div>
+          <div class="menu-item">
+            <img src="/static/momos.jpg" alt="Momos" width="350px">
+            <h3>Momos</h3>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+            <input type="checkbox" name="food" value="Momos">Order Now</input><br>
+            <button type="button" class="decrement-button" data-food="Momos">-</button>
+            <input type="number" id="Momos" name="Momos" value="0" min="0">
+            <button type="button" class="increment-button" data-food="Momos">+</button>
+          </div>
+          <div class="menu-item">
+            <img src="/static/HotDog.jpg" alt="HotDog" width="350px">
+            <h3>HotDog</h3>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+            <input type="checkbox" name="food" value="HotDog">Order Now</input><br>
+            <button type="button" class="decrement-button" data-food="HotDog">-</button>
+            <input type="number" id="HotDog" name="HotDog" value="0" min="0">
+            <button type="button" class="increment-button" data-food="HotDog">+</button>
+          </div>
+
+        </div>
+
+        <div class="container">
+          <h2 style="text-align: center; font-size: 70px; color: rgb(241, 244, 249);">South Cuisine</h2>
+          <pre>
+
+
+
+
+    </pre>
+          <div class="menu-grid" style="text-align: center;">
+            <div class="menu-item" style="text-align: center;">
+              <img src="/static/Dosa.jpg" alt="Dosa" width="350px">
+              <h3>Dosa</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+              <input type="checkbox" name="food" value="Dosa">Order Now</input><br>
+              <button type="button" class="decrement-button" data-food="Dosa">-</button>
+              <input type="number" id="Dosa" name="Dosa" value="0" min="0">
+              <button type="button" class="increment-button" data-food="Dosa">+</button>
+            </div>
+            <div class="menu-item">
+              <img src="/static/Idli.jpeg" alt="Idli" width="350px">
+              <h3>Idli</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+              <input type="checkbox" name="food" value="Idli">Order Now</input><br>
+              <button type="button" class="decrement-button" data-food="Idli">-</button>
+              <input type="number" id="Idli" name="Idli" value="0" min="0">
+              <button type="button" class="increment-button" data-food="Idli">+</button>
+            </div>
+            <div class="menu-item">
+              <img src="/static/Meduvada.jpeg" alt="Meduvada" width="350px">
+              <h3>Meduvada</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+              <input type="checkbox" name="food" value="Meduvada">Order Now</input><br>
+              <button type="button" class="decrement-button" data-food="Meduvada">-</button>
+              <input type="number" id="Meduvada" name="Meduvada" value="0" min="0">
+              <button type="button" class="increment-button" data-food="Meduvada">+</button>
+            </div>
+            <div class="menu-item">
+              <img src="/static/uttapam.jpeg" alt="uttapam" width="350px">
+              <h3>uttapam</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+              <input type="checkbox" name="food" value="uttapam">Order Now</input><br>
+              <button type="button" class="decrement-button" data-food="uttapam">-</button>
+              <input type="number" id="uttapam" name="uttapam" value="0" min="0">
+              <button type="button" class="increment-button" data-food="uttapam">+</button>
+            </div>
+
+          </div>
+
+          <div class="container">
+            <h2 style="text-align: center; font-size: 70px; color: rgb(235, 238, 243);">North Cuisine</h2>
+            <pre>
+
+
+
+
+  </pre>
+            <div class="menu-grid" style="text-align: center;">
+              <div class="menu-item" style="text-align: center;">
+                <img src="/static/Pav-bhhaji.jpg" alt="Pavbhaji" width="350px">
+                <h3>Pavbhhaji</h3>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                <input type="checkbox" name="food" value="Pavbhaji">Order Now</input><br>
+                <button type="button" class="decrement-button" data-food="Pavbhaji">-</button>
+                <input type="number" id="Pavbhaji" name="Pavbhaji" value="0" min="0">
+                <button type="button" class="increment-button" data-food="Pavbhaji">+</button>
+              </div>
+              <div class="menu-item">
+                <img src="/static/paratha.jpeg" alt="paratha" width="350px">
+                <h3>paratha</h3>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                <input type="checkbox" name="food" value="paratha">Order Now</input><br>
+                <button type="button" class="decrement-button" data-food="paratha">-</button>
+                <input type="number" id="paratha" name="paratha" value="0" min="0">
+                <button type="button" class="increment-button" data-food="paratha">+</button>
+              </div>
+              <div class="menu-item">
+                <img src="/static/Chole-bhature.jpg" alt="Cholebhature" width="350px" height="250px">
+                <h3>Cholebhature</h3>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                <input type="checkbox" name="food" value="Cholebhature">Order Now</input><br>
+                <button type="button" class="decrement-button" data-food="Cholebhature">-</button>
+                <input type="number" id="Cholebhature" name="Cholebhature" value="0" min="0">
+                <button type="button" class="increment-button" data-food="Cholebhature">+</button>
+              </div>
+              <div class="menu-item">
+                <img src="/static/Shahi-Paneer.jpg" alt="ShahiPaneer" width="350px" height="270px">
+                <h3>ShahiPaneer</h3>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                <input type="checkbox" name="food" value="ShahiPaneer">Order Now</input><br>
+                <button type="button" class="decrement-button" data-food="ShahiPaneer">-</button>
+                <input type="number" id="ShahiPaneer" name="ShahiPaneer" value="0" min="0">
+                <button type="button" class="increment-button" data-food="ShahiPaneer">+</button>
+              </div>
+
+            </div>
+          </div>
+  </section>
+
+
+
+
+
+  <script>
+        const foodRates = {
+  pizza: 100,
+  burger: 80,
+  Tacos: 60,
+  sushi: 40,
+  Noodles: 120,
+  Manchurian: 130,
+  Momos : 80,
+  HotDog: 100,
+  Pavbhaji: 60,
+  paratha: 70,
+  Cholebhature: 90,
+  ShahiPaneer: 140,
+  Dosa: 40,
+  Idli: 50,
+  Meduvada: 40,
+  uttapam: 60,
+};
+
+function updateRate() {
+  let s = "";
+  let totalRate = 0;
+  const foodQuantities = document.querySelectorAll('input[type="number"]');
+  const string=document.querySelectorAll('input[type="checkbox"][name = "food"]:checked');
+  foodQuantities.forEach(quantity => {
+   
+    const foodName = quantity.id;
+    const rate = foodRates[foodName];
+    const quantityValue = Number(quantity.value);
+    totalRate += rate * quantityValue;
+  });
+  string.forEach(quantity1=>{
+    s += quantity1.value;
+        s += ", ";
+  })
+  const totalRateElement = document.querySelector('#total-rate');
+  totalRateElement.value = totalRate;
+  const totalorder = document.querySelector('#order');
+  totalorder.value = s;
+}
+
+const incrementButtons = document.querySelectorAll('.increment-button');
+incrementButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const foodName = button.dataset.food;
+    const quantityInput = document.querySelector(`#${foodName}`);
+    let quantityValue = Number(quantityInput.value);
+    quantityValue++;
+    quantityInput.value = quantityValue;
+    updateRate();
+  });
+});
+
+const decrementButtons = document.querySelectorAll('.decrement-button');
+decrementButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const foodName = button.dataset.food;
+    const quantityInput = document.querySelector(`#${foodName}`);
+    let quantityValue = Number(quantityInput.value);
+    if (quantityValue > 0) {
+      quantityValue--;
+    }
+    quantityInput.value = quantityValue;
+    updateRate();
+  });
+});
+
+  </script>
+
+  <form style="margin-left:30%" method="POST" action="/add">
+    <label style="font-size: 40px;">
+      Name:
+    </label>
+    <input type="text" name="name" style="width: 340px; height: 40px; font-size: 30px;"></input>
+    <br>
+    <br>
+    <label style="font-size: 40px;">
+      Email:
+    </label>
+    <input type="email" name="email" style="width: 340px; height: 40px; font-size: 30px;"></input>
+    <br>
+    <br>
+
+    <label style="font-size: 40px;">
+      Location:
+    </label>
+    <input type="text" name="location" style="width: 340px; height: 40px; font-size: 30px;"></input>
+    <br>
+    <br>
+    <label style="font-size: 40px;">
+      Orders:
+      <input type="text" id="order" name="order_type" readonly style="width: 340px; height: 40px; font-size: 30px;">
+    </label>
+    <br>
+    <br>
+    <label style="font-size: 40px;">Total Rate: <input type="text" id="total-rate" name="order_rate" readonly
+        style="width: 340px; height: 40px; font-size: 30px;"></label>
+    <br>
+    <br>
+    <select id="category" name="category" required
+          style="color: black; width: 500px; height: 40px; font-size: 30px; border-radius: 20px;"
+          placeholder="Enter your location">
+          <option value="">-- Select a Canteen --</option>
+          <option value="Tantra">Tantra</option>
+          <option value="Juice Canteen">Juice Canteen</option>
+          <option value="Vindya Canteen">Vindya Canteen</option>
+          <option value="Basket Ball Canteen">Basket Ball Canteen</option>
+        </select>
+
+      <br>
+      <br>
+    <!-- <div style="text-align"> -->
+    <input type="submit" value="Submit" 
+      style="font-size:40px;background-color: rgb(248, 129, 10); color:white; align-items: center;">
+    <!-- </div> -->
+
+  </form>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Address</h3>
+          <p>IIIT HYDERABAD<br>GACHIBOWLI, Telangana</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <h3>Phone</h3>
+          <p>(123) 456-7890</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>info@fooddelivery.com</p>
+        </div>
+      </div>
+      <!-- <form>
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Subject">
+      <textarea placeholder="Message"></textarea>
+      <button>Send</button>
+    </form> -->
+    </div>
+  </section>
+
+
+  <!-- Footer Section -->
+  <footer>
+
+    <p>&copy; 2023 Food Delivery</p>
+    <ul>
+      <li><a href="#"><i class="fab fa-facebook-f"></i></a> Facebook</li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a> Twitter</li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a> Instagram</li>
+      <li><a href="#"><i class="fab fa-youtube"></i></a> Youtube</li>
+    </ul>
+  </footer>
